@@ -52,6 +52,7 @@ class Digester:
 
     def whatsaap(self):
         # client credentials are read from TWILIO_ACCOUNT_SID and AUTH_TOKEN
+        # check your twilio dashboard
         account_sid = 'AC3dfa6f36ecf6720af0773fc83d48dc5d'
         auth_token = 'f4430fa7cbf23ca146295ec11c035e8f'
         self.client = Client(account_sid, auth_token)
@@ -71,11 +72,11 @@ class Digester:
 
         r.flushdb()  # flush database (redis cache)
 
-# assign this to scheduler to be ran every
+# assign this to scheduler to be ran every 6hrs
 def recieve_feed():
     # find interested articles
-    feed = Digester(['AI', 'ML', 'Machine Learning', 'Artificial Intelligence', 'Data Science', 'Programming', 'Python',
-                                'Google', 'Java', 'Linux', 'Software Engineering', 'Data Analytics', 'Numpy', 'Pandas', 'Mathematics'])
+    feed = Digester(['AI', 'ML', 'Machine Learning', 'Artificial Intelligence', 'Data Science', 'Programming', 'Python', 'Matplotlib',
+                     'Google', 'Java', 'Linux', 'Software Engineering', 'Data Analytics', 'Numpy', 'Pandas', 'Mathematics'])
     feed.parser()
     feed.store()
     feed.whatsaap()
