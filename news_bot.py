@@ -53,7 +53,8 @@ class Digester:
         auth_token = '309d47f76127c038fe0bf9d2692f39a3'
         self.client = Client(account_sid, auth_token)
 
-        records = main_db.select_title_and_link(connector(db_file=r"./News_Database.db"))
+        # records holds results from an sql select command
+	records = main_db.select_title_and_link(connector(db_file=r"./News_Database.db"))
 
         # this is the Twilio sandbox testing number
         from_whatsapp_number='whatsapp:+14155238886'
