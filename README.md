@@ -20,7 +20,7 @@ Finding a few good articles, or blogs to read that are relevant to your area of 
 I decided to automate the process of searching for current information in the tech industry that might be coming done the road; by scraping a website (eg.Hacker News) for any article I might be interested in, store the title of articles with their links into a database, and finally send them to me on whatsapp.
 
 
-## Prerequisites
+## Pre-requisites
 
 Before you begin, ensure you have met the following requirements:
 <!--- These are just example requirements. Add, duplicate or remove as required --->
@@ -71,5 +71,5 @@ You can decide to host the code on [heroku](https://www.heroku.com/)
 ## Contact
 
 If you want to contact me you can reach me at
-* [mail](agbofrederick56@gmail.com)
-* [whatsapp](+233558478823)
+* agbofrederick56@gmail.com
+* +233558478823
