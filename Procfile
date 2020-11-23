@@ -1,1 +1,1 @@
-clock_bot: python clock_bot.py
+clock_bot: python3 clock_bot.py
