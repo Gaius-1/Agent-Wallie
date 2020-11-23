@@ -48,6 +48,7 @@ class Digester:
 
     def whatsaap(self):
         # client credentials are read from TWILIO_ACCOUNT_SID and AUTH_TOKEN
+        # check your twilio dashboard
         account_sid = 'AC3dfa6f36ecf6720af0773fc83d48dc5d'
         auth_token = '309d47f76127c038fe0bf9d2692f39a3'
         self.client = Client(account_sid, auth_token)
