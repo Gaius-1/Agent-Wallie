@@ -1,4 +1,4 @@
 twilio==6.35.0
-APScheduler==3.6.1
+APScheduler==3.6.3
 requests==2.25.0
 beautifulsoup4==4.9.3
