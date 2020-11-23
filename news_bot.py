@@ -1,13 +1,12 @@
 # import necessary modules
 import requests
-from bs4 import BeautifulSoup
-import redis
-from twilio.rest import Client
 import re
+import main_db
+from main_db import create_connection as connector
+from bs4 import BeautifulSoup
+from twilio.rest import Client
 
-# set up connection
-r = redis.Redis(host='localhost', port=6379, db=0)
-
+# Create class to clean data
 class Digester:
     """Scrape the news site and get the relevant updates.."""
     def __init__(self, buzz_words):
@@ -45,37 +44,36 @@ class Digester:
                 if buzz_word.lower() in article['title'].lower():
                     self.saved_articles.append(article)
 
-    def store(self):
-        # store link in the redis database (NoSQL)
-        for feed in self.saved_articles:
-            r.set(feed['title'], feed['link'])  # the set method of the redis
+        return self.saved_articles
 
     def whatsaap(self):
         # client credentials are read from TWILIO_ACCOUNT_SID and AUTH_TOKEN
         account_sid = 'AC3dfa6f36ecf6720af0773fc83d48dc5d'
-        auth_token = 'f4430fa7cbf23ca146295ec11c035e8f'
+        auth_token = '309d47f76127c038fe0bf9d2692f39a3'
         self.client = Client(account_sid, auth_token)
+
+        records = main_db.select_title_and_link(connector(db_file=r"./News_Database.db"))
 
         # this is the Twilio sandbox testing number
         from_whatsapp_number='whatsapp:+14155238886'
         # replace this number with your own WhatsApp Messaging number
         to_whatsapp_number='whatsapp:+233558478823'
-        # try:
-        self.client.messages.create(from_=from_whatsapp_number,
-                                    body="{} links you might be interested now:\n{}".format(len(self.saved_articles),
-                                         "\n\n".join([key.decode("utf-8") + ":  " +r.get(key).decode("utf-8") for key in r.scan_iter()])),
-                                    to=to_whatsapp_number)
-        print('Message sent successfully...')
-        # except:
-        #     print('Something went wrong...')
+        try:
+        # send message
+            self.client.messages.create(from_=from_whatsapp_number,
+                                        body="{} links you might be interested now:\n{}".format(len(records),
+                                             "\n\n".join([tmp[0] + ":  " +tmp[1] for tmp in records])),
+                                        to=to_whatsapp_number)
+            print('Message sent successfully...')
+        except:
+            print('Something went wrong...')
 
-        r.flushdb()  # flush database (redis cache)
-
-# assign this to scheduler to be ran every
+# assign this to scheduler to be ran every 6hrs
 def recieve_feed():
     # find interested articles
-    feed = Digester(['AI', 'ML', 'Machine Learning', 'Artificial Intelligence', 'Data Science', 'Programming', 'Python',
-                                'Google', 'Java', 'Linux', 'Software Engineering', 'Data Analytics', 'Numpy', 'Pandas', 'Mathematics'])
-    feed.parser()
-    feed.store()
+    feed = Digester(['Machine Learning', 'Artificial Intelligence', 'Data Science',
+		     'Python','Java', 'Linux',  'Numpy', 'Pandas', 'Mathematics'])
+    articles_and_links = feed.parser()
+    main_db.delete_all_records(connector(db_file=r"./News_Database.db"))
+    main_db.store_articles_links(articles_and_links)
     feed.whatsaap()
