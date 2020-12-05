@@ -9,16 +9,26 @@
 With the rapid pace of innovation in the tech industry, it can be difficult for tech professionals, programmers, and Developers to keep their skills current. That being said, reading technology news and blogs every day is one of the best ways to keep up to date on the latest trends and skills needed in tech.
 
 <!--- Add image --->
+<<<<<<< HEAD
 ![Study for Finals](https://github.com/squash-bit/Automate-Whatsapp-News/Assets/Studying-for-finals.jpeg?raw=true)
 Finding a few good articles, or blogs to read that are relevant to your area of expertise to follow can sometimes be daunting, not to talk of the time spent scrolling through a plethora of articles that don't interest you.
 <!--- Add image --->
 
 ![alert](https://github.com/squash-bit/Automate-Whatsapp-News/Assets/bun-alert.png?raw=true)
+=======
+
+![Study for Finals](https://github.com/squash-bit/Automate-Whatsapp-News/blob/master/Assests/Studying-for-finals.jpeg?raw=true)
+
+Finding a few good articles, or blogs to read that are relevant to your area of expertise to follow can sometimes be daunting, not to talk of the time spent scrolling through a plethora of articles that don't interest you.
+<!--- Add image --->
+
+![alert](https://github.com/squash-bit/Automate-Whatsapp-News/blob/master/Assests/bun-alert.png?raw=true)
+>>>>>>> 56a3bdc6fe7c9cf80d128ba62c6a881724e6b4c9
 
 I decided to automate the process of searching for current information in the tech industry that might be coming done the road; by scraping a website (eg.Hacker News) for any article I might be interested in, store the title of articles with their links into a database, and finally send them to me on whatsapp.
 
 
-## Prerequisites
+## Pre-requisites
 
 Before you begin, ensure you have met the following requirements:
 <!--- These are just example requirements. Add, duplicate or remove as required --->
@@ -72,5 +82,5 @@ You can decide to host the code on [heroku](https://www.heroku.com/)
 ## Contact
 
 If you want to contact me you can reach me at
-* [mail](agbofrederick56@gmail.com)
-* [whatsapp](+233558478823)
+* agbofrederick56@gmail.com
+* +233558478823

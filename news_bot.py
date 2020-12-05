@@ -61,13 +61,19 @@ class Digester:
         self.client = Client(account_sid, auth_token)
 
         # records holds results from an sql select command
+<<<<<<< HEAD
         records = main_db.select_title_and_link(connector(db_file=r"./News_Database.db"))
+=======
+        records = main_db.select_title_and_link(
+            connector(db_file=r"./News_Database.db"))
+>>>>>>> 56a3bdc6fe7c9cf80d128ba62c6a881724e6b4c9
 
         # this is the Twilio sandbox testing number
         from_whatsapp_number = 'whatsapp:+14155238886'
         # replace this number with your own WhatsApp Messaging number
         to_whatsapp_number = 'whatsapp:+233558478823'
         try:
+<<<<<<< HEAD
             # check if articles are available for me to read.
             if len(records) == 0:
                 self.client.messages.create(from_=from_whatsapp_number,
@@ -79,10 +85,18 @@ class Digester:
                                             body="{} Articles you might be interested now:\n{}".format(len(records),
                                                                                                     "\n\n".join([tmp[0] + ":  " + tmp[1] for tmp in records])),
                                             to=to_whatsapp_number)
+=======
+            # send message
+            self.client.messages.create(from_=from_whatsapp_number,
+                                        body="{} links you might be interested now:\n{}".format(len(records),
+                                                                                                "\n\n".join([tmp[0] + ":  " + tmp[1] for tmp in records])),
+                                        to=to_whatsapp_number)
+>>>>>>> 56a3bdc6fe7c9cf80d128ba62c6a881724e6b4c9
             print('Message sent successfully...')
         except:
             print('Something went wrong...')
 
+<<<<<<< HEAD
 # assign this function to scheduler to be ran every 6hrs
 def get_feeds():
     # find interested articles
@@ -91,6 +105,16 @@ def get_feeds():
     articles_and_links = feed.scrapper()
     # yhyh, I don't plan of keeping of the keeping this data ;)
     # I only want updates, not to save for future reference.
+=======
+# assign this to scheduler to be ran every 6hrs
+
+
+def recieve_feed():
+    # find interested articles
+    feed = Digester(['Machine Learning', 'Artificial Intelligence', 'Data Science',
+                     'Python', 'Java', 'Linux',  'Numpy', 'Pandas', 'Mathematics'])
+    articles_and_links = feed.parser()
+>>>>>>> 56a3bdc6fe7c9cf80d128ba62c6a881724e6b4c9
     main_db.delete_all_records(connector(db_file=r"./News_Database.db"))
     # store new set of articles
     main_db.store_articles_links(articles_and_links)

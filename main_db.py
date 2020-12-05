@@ -28,7 +28,11 @@ def create_table(conn, create_table_sql):
     except Error as e:
         print(e)
 
+<<<<<<< HEAD
 # get query for db_table creation
+=======
+# create Articles table
+>>>>>>> 56a3bdc6fe7c9cf80d128ba62c6a881724e6b4c9
 def make_table_attributes(database_conn):
     sql_create_articles_table = """ CREATE TABLE IF NOT EXISTS Articles (
                                         title text NOT NULL,
