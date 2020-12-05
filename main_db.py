@@ -1,10 +1,10 @@
+# import necessary modules
 import sqlite3
 from sqlite3 import Error
 import news_bot
 
 def create_connection(db_file):
-    """ create a database connection to the SQLite database
-        specified by db_file
+    """ create a database connection to the SQLite database specified by db_file
     :param db_file: database file
     :return: Connection object or None
     """
@@ -13,7 +13,7 @@ def create_connection(db_file):
         conn = sqlite3.connect(db_file)
     except Error as e:
         print(e)
-
+    # return connection object
     return conn
 
 def create_table(conn, create_table_sql):
@@ -28,7 +28,7 @@ def create_table(conn, create_table_sql):
     except Error as e:
         print(e)
 
-# add attributes
+# get query for db_table creation
 def make_table_attributes(database_conn):
     sql_create_articles_table = """ CREATE TABLE IF NOT EXISTS Articles (
                                         title text NOT NULL,
@@ -39,23 +39,23 @@ def make_table_attributes(database_conn):
     conn = database_conn
     # create tables
     if conn is not None:
-        # create projects table
+        # create Aritcles db_table
         create_table(conn, sql_create_articles_table)
     else:
         print("Error! cannot create the database connection.")
 
 # insert rows to each attribute
-def insert_articles(conn, project):
+def insert_articles(conn, row_values):
     """
-    Create a new project into the projects table
-    :param conn:
-    :param project:
+    Create a new row into the Articles table
+    :param conn: Connection object
+    :param project: row_values
     :return: project id
     """
-    sql = ''' INSERT INTO Articles(title,link,comments,score)
+    query = ''' INSERT INTO Articles(title,link,comments,score)
               VALUES(?,?,?,?) '''
     cur = conn.cursor()
-    cur.execute(sql, project)
+    cur.execute(query, row_values)
     conn.commit()
 
 def store_articles_links(articles_and_links):
@@ -72,11 +72,12 @@ def store_articles_links(articles_and_links):
 
 def select_title_and_link(conn):
     """
-    Query all rows in the tasks table
-    :param conn: the Connection object
-    :return:
+    Select 'title' and 'links' from the Articles table
+    :param conn: Connection object
+    :return: records | results
     """
     try:
+        # query database to get the 'title' and 'link' of recommended articles
         cur = conn.cursor()
         cur.execute("SELECT title, link FROM Articles")
 
@@ -86,6 +87,7 @@ def select_title_and_link(conn):
     except Error as e:
         print("Failed to read data from sqlite table", e)
     finally:
+        # close connection
         if (conn):
             conn.close()
             print("The SQLite connection is closed")
