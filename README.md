@@ -9,7 +9,9 @@
 With the rapid pace of innovation in the tech industry, it can be difficult for tech professionals, programmers, and Developers to keep their skills current. That being said, reading technology news and blogs every day is one of the best ways to keep up to date on the latest trends and skills needed in tech.
 
 <!--- Add image --->
+
 ![Study for Finals](https://github.com/squash-bit/Automate-Whatsapp-News/Assets/Studying-for-finals.jpeg?raw=true)
+
 Finding a few good articles, or blogs to read that are relevant to your area of expertise to follow can sometimes be daunting, not to talk of the time spent scrolling through a plethora of articles that don't interest you.
 <!--- Add image --->
 
