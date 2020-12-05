@@ -15,13 +15,6 @@ Finding a few good articles, or blogs to read that are relevant to your area of 
 
 ![alert](https://github.com/squash-bit/Automate-Whatsapp-News/Assets/bun-alert.png?raw=true)
 
-![Study for Finals](https://github.com/squash-bit/Automate-Whatsapp-News/blob/master/Assests/Studying-for-finals.jpeg?raw=true)
-
-Finding a few good articles, or blogs to read that are relevant to your area of expertise to follow can sometimes be daunting, not to talk of the time spent scrolling through a plethora of articles that don't interest you.
-<!--- Add image --->
-
-![alert](https://github.com/squash-bit/Automate-Whatsapp-News/blob/master/Assests/bun-alert.png?raw=true)
-
 I decided to automate the process of searching for current information in the tech industry that might be coming done the road; by scraping a website (eg.Hacker News) for any article I might be interested in, store the title of articles with their links into a database, and finally send them to me on whatsapp.
 
 
