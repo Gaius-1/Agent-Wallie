@@ -11,6 +11,7 @@ With the rapid pace of innovation in the tech industry, it can be difficult for 
 <!--- Add image --->
 ![Study for Finals](https://github.com/squash-bit/Automate-Whatsapp-News/blob/master/Assets/Studying-for-finals.jpeg?raw=true)
 
+
 Finding a few good articles, or blogs to read that are relevant to your area of expertise to follow can sometimes be daunting, not to talk of the time spent scrolling through a plethora of articles that don't interest you.
 <!--- Add image --->
 
@@ -60,6 +61,7 @@ python3 clock_bot.py
 ```
 
 <!--- Add image showing program runs in session--->
+
 
 You can decide to host the code on [heroku](https://www.heroku.com/)
 
