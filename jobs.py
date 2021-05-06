@@ -1,10 +1,8 @@
 import threading
-import time
 import schedule
-import requests
-from scraper import Cleanser as agent_wallie
-from main_db import StoryDB
+import time
 
+# assign a job
 def run_continuously(interval=1):
     """Continuously run, while executing pending jobs at each
     elapsed time interval.

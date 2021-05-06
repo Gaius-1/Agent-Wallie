@@ -53,7 +53,10 @@ def summarizer(vlink):
                 word_frequency[word] +=1
 
     ## Get words that occur most frequent and their frequency index(ratio)
-    maximum_frequency = max(word_frequency.values())
+    if word_frequency != {}:
+        maximum_frequency = max(word_frequency.values())
+    else:
+        return ''
 
     for word in word_frequency.keys():
         word_frequency[word] = (word_frequency[word]/maximum_frequency)
