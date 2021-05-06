@@ -11,9 +11,11 @@ With the rapid pace of innovation in the tech industry, it can be difficult for 
 <!--- Add image --->
 ![Study for Finals](https://github.com/squash-bit/Automate-Whatsapp-News/blob/master/Assets/Studying-for-finals.jpeg?raw=true)
 
+
 Finding a few good articles or blogs to read from, especially ones that are relevant to your area of expertise at your spare time, can be daunting sometimes not to talk of the time spent scrolling through a plethora of articles that don't interest you. What mostly annoys me at times, is the fact that an individual spends his/her precious time to read an article with a "click-bait" title only to realize that the contents has nothing to do with its title! 
 
 Hmn...
+
 <!--- Add image --->
 
 ![alert](https://github.com/squash-bit/Automate-Whatsapp-News/blob/master/Assets/bun-alert.png?raw=true)
