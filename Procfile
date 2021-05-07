@@ -1,1 +1,1 @@
-clock_bot: python3 clock_bot.py
+wallie: python3 wallie.py
