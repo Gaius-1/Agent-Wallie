@@ -1,5 +1,5 @@
 # import necessary modules
-from telebot.types import *
+from telebot import types
 from twilio.rest import Client
 from jobs import run_continuously
 from scraper import Cleanser as agent_wallie
