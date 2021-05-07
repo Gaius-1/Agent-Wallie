@@ -10,23 +10,16 @@ With the rapid pace of innovation in the tech industry, it can be difficult for 
 
 <!--- Add image --->
 ![Study for Finals](https://github.com/squash-bit/Automate-Whatsapp-News/blob/master/Assets/Studying-for-finals.jpeg?raw=true)
-<<<<<<< HEAD
-=======
 
-
-Finding a few good articles or blogs to read from, especially ones that are relevant to your area of expertise at your spare time, can be daunting sometimes not to talk of the time spent scrolling through a plethora of articles that don't interest you. What mostly annoys me at times, is the fact that an individual spends his/her precious time to read an article with a "click-bait" title only to realize that the contents has nothing to do with its title! 
+Finding a few good articles or blogs to read from, especially ones that are relevant to your area of expertise at your spare time, can be daunting sometimes not to talk of the time spent scrolling through a plethora of articles that don't interest you. What mostly annoys me at times, is the fact that an individual spends his/her precious time to read an article with a "click-bait" title only to realize that the contents has nothing to do with its title!
 
 Hmn...
->>>>>>> 31e02bcaa08daf0f74009f7a0e0793aaf8bd7fa0
 
 <!--- Add image --->
 
 ![alert](https://github.com/squash-bit/Automate-Whatsapp-News/blob/master/Assets/bun-alert.png?raw=true)
-<<<<<<< HEAD
-=======
 
 So, after a long time of pain, I decided to create a bot that gets me the right news update I need at a certain time. Yes, I know there are so many options out there to give you and I the same result we need or an even more optimal result but, I just felt like solving my own problem without leveraging on the other Giants like medium, and co... 👀<!-- add an emoji-->
->>>>>>> 31e02bcaa08daf0f74009f7a0e0793aaf8bd7fa0
 
 Uniquely for me, I am building a bot that recommends news update for the user based on two variables; **user's preference** and **keywords** in the article (not title because sometimes it can mislead). Then returns to user the "title", "summary of content", and its "link" through Telegram. 😌
 
@@ -72,11 +65,6 @@ On Unix or MacOS, run:
 `wallie.py` is the brain behind the telegram bot
 
 `post_news.py` further post updates to its user through whatsapp
-
-<<<<<<< HEAD
-<!--- Add image showing program runs in session--->
-=======
->>>>>>> 31e02bcaa08daf0f74009f7a0e0793aaf8bd7fa0
 
 ## Check it out
 
@@ -126,5 +114,3 @@ python3 wallie.py
 <!--- Add image showing program runs in session--->
 
 You can decide to host the code on [heroku](https://www.heroku.com/) to deploy your version online
-
-
