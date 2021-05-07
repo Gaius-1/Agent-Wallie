@@ -146,6 +146,7 @@ if __name__ == '__main__':
 
                 bot.send_message(chat_id, news_update)
         else:
+            # when there's no news update for user...
             bot.send_message(chat_id, "No Latest Updates for Today.\nThank you very much")
             post_news.whatsapp(client, "No Latest Updates for Today.\nThank you very much")
 
