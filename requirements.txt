@@ -2,7 +2,7 @@ newspaper3k==0.2.8
 schedule==1.1.0
 requests==2.31.0
 beautifulsoup4==4.9.3
-nltk==3.5
+nltk==3.9
 pyTelegramBotAPI==3.7.7
 twilio==6.57.0
 
